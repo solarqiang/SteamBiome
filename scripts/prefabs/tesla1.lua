@@ -46,7 +46,7 @@ local function set_stump(inst)
     inst:RemoveComponent("workable")
     inst:RemoveComponent("burnable")
     inst:RemoveComponent("propagator")
-	inst:RemoveComponent("prototyper")
+	-- inst:RemoveComponent("prototyper")
 	inst.SoundEmitter:KillSound("idlesound")
 	inst.Light:Enable(false)
     RemovePhysicsColliders(inst)
@@ -87,7 +87,7 @@ end
 local function OnBurnt(inst)
     inst:RemoveComponent("burnable")
     inst:RemoveComponent("propagator")
-	inst:RemoveComponent("prototyper")
+	-- inst:RemoveComponent("prototyper")
 	inst.SoundEmitter:KillSound("idlesound")
 	inst.Light:Enable(false)
     
@@ -142,13 +142,13 @@ local function inspect_tree(inst)
     end
 end
 
-	local function onturnon(inst)
-		inst.SoundEmitter:PlaySound("dontstarve/common/researchmachine_lvl2_idle_LP","idlesound")
-	end
+	-- local function onturnon(inst)
+	-- 	inst.SoundEmitter:PlaySound("dontstarve/common/researchmachine_lvl2_idle_LP","idlesound")
+	-- end
 
-	local function onturnoff(inst)
-		inst.SoundEmitter:KillSound("idlesound")
-	end
+	-- local function onturnoff(inst)
+	-- 	inst.SoundEmitter:KillSound("idlesound")
+	-- end
 
 local function onsave(inst, data)
     if inst:HasTag("burnt") or inst:HasTag("fire") then
@@ -191,7 +191,7 @@ end
 		local minimap = inst.entity:AddMiniMapEntity()
 		minimap:SetIcon( "tesla_map.tex" )
 	    
-		inst:AddTag("prototyper")
+		-- inst:AddTag("prototyper")
 		
 		local light = inst.entity:AddLight()
 		inst.Light:Enable(true)
@@ -205,9 +205,9 @@ end
 	    anim:PlayAnimation("idle2",true)
 	    anim:SetTime(math.random()*2)
 		
-		inst:AddComponent("prototyper")
-		inst.components.prototyper.onturnon = onturnon
-		inst.components.prototyper.onturnoff = onturnoff
+		-- inst:AddComponent("prototyper")
+		-- inst.components.prototyper.onturnon = onturnon
+		-- inst.components.prototyper.onturnoff = onturnoff
 
 		MakeObstaclePhysics(inst, .25)   
 		inst:AddTag("tree")

@@ -22,6 +22,7 @@ PrefabFiles = {
 	"stonehand",
 	"mechabat",
 	"forcefieldn",
+    "magmarock_copper",
 	"mechasword",
 	"mechagun",
 	"mechamine",
