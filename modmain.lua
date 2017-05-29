@@ -1,6 +1,9 @@
 modimport("scripts/prefabs.lua")
 modimport("scripts/activateforce.lua")
 modimport("scripts/steambitems.lua")
+if GLOBAL.IsDLCEnabled(GLOBAL.CAPY_DLC) then
+    modimport("scripts/steamb_treasures.lua")
+end
 
 --Changes "pick up" to "use" for "food machine".
 AddSimPostInit(function(inst)
